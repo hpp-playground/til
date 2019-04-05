@@ -15,5 +15,15 @@ export default class FormInput extends Component {
         if (this.props.pattern === null) {
             return true
         }
+        return this.props.pattern.test(s)
+    }
+
+    handleChange (e) {
+        const v = e.target.value
+        const filter = this.props.filter
+        let newValue = v
+        if (filter !== null) {
+            newValue = newValue.replace(filter, '')
+        }
     }
 }
