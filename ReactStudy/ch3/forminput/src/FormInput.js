@@ -25,5 +25,35 @@ export default class FormInput extends Component {
         if (filter !== null) {
             newValue = newValue.replace(filter, '')
         }
+        const newIsOK = this.checkValue(newValue)
+        this.setState({
+            value: newValue,
+            isOK: newIsOK
+        })
+        if (this.props.onChange) {
+            this.props.onChange({
+                target: this,
+                value: newValue,
+                isOK: newIsOK,
+                name: this.props.name
+            })
+        }
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.setState({
+            value: nextProps.value,
+            isOK: this.checkValue(nextProps.value)
+        })
+    }
+
+    render () {
+        const msg = this.renderStatusMessage()
+        return (<div>
+            <label>{this.props.label}: <br />
+                <input type='text'
+                name={this.props.name}> 
+            </label>
+        </div>)
     }
 }
