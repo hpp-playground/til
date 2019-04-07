@@ -52,8 +52,49 @@ export default class FormInput extends Component {
         return (<div>
             <label>{this.props.label}: <br />
                 <input type='text'
-                name={this.props.name}> 
+                name={this.props.name}
+                placeholder={this.props.placehoder}
+                value={this.state.value}
+                onChange={e => this.handleChange(e)} />
+                {msg} 
             </label>
         </div>)
     }
+
+    renderStatusMessage () {
+        const so = {
+            margin: '8px',
+            padding: '8px',
+            color: 'white'
+        }
+        let msg = null
+        if (this.state.isOK) {
+            so.backgroundColor = 'green'
+            msg = <span style={so}>OK</span>
+        } else {
+            if (this.state.value !== '') {
+                so.backgroundColor = 'red'
+                msg = <span style={so}>NG</span>
+            }
+        }
+        return msg
+    }
+}
+
+FormInput.propTypes = {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    filter: PropTypes.object,
+    pattern: PropTypes.object,
+    value: PropTypes.string,
+    placehoder: PropTypes.string,
+    onChange: PropTypes.func
+}
+
+FormInput.defaultProps = {
+    filter: null,
+    pattern: null,
+    value: '',
+    placehoder: '',
+    onChange: null
 }
