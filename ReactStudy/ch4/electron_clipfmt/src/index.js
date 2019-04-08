@@ -14,8 +14,8 @@ export default class App extends Component {
     }
 
     convToHalfWidth (str) {
-        const s2 = str.replace(/[！-～]/g, e => {
-            return String.fromCharCode(e.charCodeAt(0) - 0xFEE0)
+        const s2 = str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, e => {
+            return String.fromCharCode(e.charCodeAt(0) - 65248)
         })
         return s2
     }
