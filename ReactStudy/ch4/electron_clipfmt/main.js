@@ -23,6 +23,7 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+  // mainWindow.webContents.openDevTools()
   // ウィンドウが閉じるときの処理
   mainWindow.on('closed', function () {
     mainWindow = null

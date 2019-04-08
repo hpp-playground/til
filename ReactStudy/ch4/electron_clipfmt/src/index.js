@@ -10,17 +10,17 @@ export default class App extends Component {
             isActive: false,
             zen2han: true
         }
-        setInterval(e => this.thick(), 1000)
+        setInterval(e => this.tick(), 1000)
     }
 
     convToHalfWidth (str) {
-        const s2 = ste.replace(/[!-~]/g, e => {
-            return String.fromCharCode(e.charCodeAt(0) - 0xFFE0)
+        const s2 = str.replace(/[！-～]/g, e => {
+            return String.fromCharCode(e.charCodeAt(0) - 0xFEE0)
         })
         return s2
     }
 
-    thick () {
+    tick () {
         if (!this.state.isActive) return
         const clip = clipboard.readText()
         let clip2 = clip
@@ -39,7 +39,7 @@ export default class App extends Component {
     }
 
     render () {
-        const taStyel = {
+        const taStyle = {
             width: '100%',
             height: '300px',
             backgroundColor: '#F4F4F4'
