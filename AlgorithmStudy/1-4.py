@@ -1,4 +1,4 @@
-def isAsciiPalindoromeByHash(string):
+def isAsciiPermutationOfPalindoromeByHash(string):
     string = "".join(string.split())
     hash = [0]*128
     for ch in string:
@@ -13,12 +13,13 @@ def isAsciiPalindoromeByHash(string):
     return True
 
 
-def isAsciiPalindoromeByBit(string):
+def isAsciiPermutationOfPalindoromeByBit(string):
     string = "".join(string.split())
     hashBit = 0
     for ch in string:
         hashBit ^= 1 << ord(ch)
-    print(bin(hashBit))
+    return not (hashBit & (hashBit-1))
+    
 
 if __name__ == "__main__":
-    print(isAsciiPalindoromeByBit("hahzz"))
+    print(isAsciiPermutationOfPalindoromeByBit("hash"))
