@@ -7,13 +7,13 @@ let brightnessValues = [];
 let actRandomSeed = 0;
 let alphaValue = 75;
 
-let setup = () => {
+const setup = () => {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
 }
 
-let draw = () => {
+const draw = () => {
   noLoop();
   background(0);
   randomSeed(actRandomSeed);
@@ -83,7 +83,7 @@ let draw = () => {
   }
 }
 
-let gradient = (x, y, w, h, c1, c2) => {
+const gradient = (x, y, w, h, c1, c2) => {
   let ctx = drawingContext; // global canvas context p5.js let
   let grd = ctx.createLinearGradient(x, y, x, y + h);
   grd.addColorStop(0, c1.toString());
@@ -92,12 +92,12 @@ let gradient = (x, y, w, h, c1, c2) => {
   ctx.fillRect(x, y, w, h);
 }
 
-let mouseReleased = () => {
+const mouseReleased = () => {
   actRandomSeed = random(100000);
   loop();
 }
 
-let keyPressed = () => {
+const keyPressed = () => {
   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
   if (key == 'c' || key == 'C') {
     // -- save an ase file (adobe swatch export) --
