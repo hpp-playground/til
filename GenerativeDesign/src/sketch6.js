@@ -1,13 +1,13 @@
-'use strict';
+'use strict'
 
-let tileCountX = 50;
-let tileCountY = 10;
+let tileCountX = 50
+let tileCountY = 10
 
-let hueValues = [];
-let saturationValues = [];
-let brightnessValues = [];
+let hueValues = []
+let saturationValues = []
+let brightnessValues = []
 
-function setup() {
+let setup = () => {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
@@ -20,7 +20,7 @@ function setup() {
   }
 }
 
-function draw() {
+let draw = () => {
   // white back
   background(0, 0, 100);
 
@@ -51,7 +51,7 @@ function draw() {
   }
 }
 
-function keyPressed() {
+let keyPressed = () => {
   if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
   if (key == 'c' || key == 'C') {
     // -- save an ase file (adobe swatch export) --
