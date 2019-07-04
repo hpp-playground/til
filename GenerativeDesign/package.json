@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "wa": "babel src --compact==true --watch --out-dir output",
     "ba": "babel src --compact==true --out-dir output",
     "bn" : "for f in ./src/*; do if [[ -e ./output/${f:6} ]]; then :; else babel ${f} --compact==true -o ./output/${f:6}; fi; done"
   },
