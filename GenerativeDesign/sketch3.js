@@ -22,7 +22,6 @@ function draw() {
         vertex(vx, vy)
         fill(angle, mouseX, mouseY)
     }
-
     endShape()
 }
 
