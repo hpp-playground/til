@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(screen.width, screen.height)
+  createCanvas(windowWidth, windowHeight)
   noStroke()
 }
 
@@ -70,5 +70,5 @@ function keyReleased() {
 
 function setImage(loadedImageFile) {
   img = loadedImageFile
-  img.resize(screen.width, screen.height)
+  img.resize(windowWidth, windowHeight)
 }
