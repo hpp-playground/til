@@ -9,7 +9,7 @@ const setup = () => {
   createCanvas(windowWidth, windowHeight)
   colorMode(HSB, 360, 100, 100, 100)
   noStroke()
-  fill(192, 100, 64, 60)
+  fill(192, 150, 104, 60)
 }
 
 const draw = () => {
