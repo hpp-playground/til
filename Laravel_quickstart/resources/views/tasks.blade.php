@@ -52,7 +52,15 @@
                             @foreach ($tasks as $task)
                                 <tr>
                                     <td class="table-text"><div>{{ $task->name }}</div></td>
-                                    
+                                    <td>
+                                        <form action="{{ url('task/'.$task->id) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>Delete
+                                        </button>
+                                        </form>
+                                    </td>
                                     <td>&nbsp;</td>
                                 </tr>
                             @endforeach

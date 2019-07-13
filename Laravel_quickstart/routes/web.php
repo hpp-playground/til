@@ -33,8 +33,8 @@ Route::post('/task', function (Request $request) {
             -> withErrors($validator);
     }
 
-    //TODO: Add New Task
-    $task = Task;
+
+    $task = new Task;
     $task->name = $request->name;
     $task->save();
 
@@ -42,7 +42,9 @@ Route::post('/task', function (Request $request) {
 });
    
 Route::delete('/task/{task}', function (Task $task) {
-    //
+    $task->delete();
+
+    return redirect('/');
 });
 
 
