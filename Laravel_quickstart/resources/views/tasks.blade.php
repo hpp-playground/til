@@ -19,7 +19,7 @@
                     <div class="form-group">
                         <label for="task-name" class="col-sm-3 control-label">Task</label>
                         <div class="col-sm-6">
-                            <input type="text" id="task-nam" class="form-control" name="name">
+                            <input type="text" id="task-name" class="form-control" name="name">
                         </div>
                     </div>
 
