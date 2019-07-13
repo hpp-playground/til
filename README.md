@@ -1,4 +1,4 @@
-# deeplearning-3
+#til(Today I Learned)
 
-Deep Learning 勉強用のリポジトリです。
-『直感Deep Learning』を参考にプログラムを作成しています。
+自習用のリポジトリをまとめたリポジトリです。  
+DeepLearning系のリポジトリを増やしすぎました。
