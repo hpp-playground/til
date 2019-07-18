@@ -8,15 +8,21 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class HomeTest extends TestCase
 {
-  
-    function testStatusCode()
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function testStatusCode()
     {
         $response = $this->get('/home');
         $response->assertStatus(200);
     }
+
     public function testBody()
     {
         $response = $this->get('/home');
-        $response->assertSeeText("こんにちは");
+
+        $response->assertSeeText('こんにちは');
     }
 }
