@@ -18,4 +18,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/action/favorite', 'FavoriteAction@switchFavorite');
-Route::get('/action/favorite', 'FavoriteAction@switchFavorite');
