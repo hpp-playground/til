@@ -15,6 +15,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        #$this->app->singleton('FavoriteService', function ($app) {
+            #return new App\Services\FavoriteService($app);
+        #});
+        
+        $this->app->bind(
+            \App\DataProvider\FavoriteRepositoryInterface::class,
+            \App\DataProvider\FavoriteRepository::class
+        );
+    
         $this->app->singleton('encrypter', function ($app) {
             $config = $app->make('config')->get('app');
 

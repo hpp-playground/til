@@ -8,3 +8,6 @@ http://homestead.test/payload
 
 http://homestead.test/auth/login
 
+###
+
+POST http://homestead.test/api/action/favorite
