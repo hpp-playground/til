@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\DataProvider\Database\RegisterReviewDataProvider;
+use App\DataProvider\RegisterReviewProviderInterface;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(RegisterReviewProviderInterface::class, function () {
+            return new RegisterReviewDataProvider();
+        });
     }
 
     /**
