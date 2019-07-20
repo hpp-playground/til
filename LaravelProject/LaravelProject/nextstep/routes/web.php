@@ -12,11 +12,5 @@
 */
 
 Route::get('/', function () {
-    $view = view('welcome');
-    \Event::dispatch(new \App\Events\PublishProcessor(1));
-    return $view;
-});
-
-Route::get('/test', function () {
-    return view('test');
+    return view('welcome');
 });
