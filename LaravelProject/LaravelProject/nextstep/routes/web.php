@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/no-args', function () {
+    Artisan::call('no-args-command');
+});
+
+Route::get('/with-args', function () {
+    Artisan::call('with-args-command', [
+        'arg' => 'value',
+        '--switch' => false,
+    ]);
+});

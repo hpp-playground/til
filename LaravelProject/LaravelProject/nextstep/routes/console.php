@@ -20,3 +20,4 @@ Artisan::command('inspire', function () {
 Artisan::command('hello:closure', function () {
     $this->comment('Hello closure command');
 })->describe('sample command');
+
