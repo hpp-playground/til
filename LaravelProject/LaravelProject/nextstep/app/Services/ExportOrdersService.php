@@ -12,11 +12,22 @@ final class ExportOrdersService
 {
     private $connection;
 
+    /**
+     *
+     *
+     * @param Connection $connection
+     */
     public function __construct(Connection $connection)
     {
-        $this->connection = $connection
+        $this->connection = $connection;
     }
 
+
+    /**
+     *
+     * @param Carbon $date
+     * @return Generator
+     */
     public function findOrders(Carbon $date): Generator
     {
         return $this->connection
@@ -38,8 +49,8 @@ final class ExportOrdersService
             ])
             ->where('order_date', '>=', $date->toDateString())
             ->where('order_date', '<', $date->copy()->addDay()->toDateString())
-            ->orderBy('order_date')
-            ->orderBy('orders_code')
+            ->orderBy('orders.order_date')
+            ->orderBy('orders.order_code')
             ->orderBy('order_details.detail_no')
             ->cursor();
     }
