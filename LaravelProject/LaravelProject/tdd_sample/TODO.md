@@ -20,6 +20,9 @@
     *api_customersに顧客名をPOSTするとcustomersテーブルにそのデータが追加される
     ->canAddCustomerNameToCustomersTableFromApiCustomersByPOST() //
 
+    *api_customersにnameが含まれないデータをPOSTした場合は422UnprocessableEntityが返却される
+    ->return422ByPostingDataWithoutNameFromApiCustomersByPOST()
+
 
 
 
