@@ -1,6 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature;
+
+use App\Customer;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -8,6 +12,14 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReportTest extends TestCase
 {
+    use RefreshDatabase;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->artisan('db:seed', ['--class' => 'TestDataSeeder']);
+    }
+
     /**
      * @test
      */
@@ -15,6 +27,37 @@ class ReportTest extends TestCase
     {
         $response = $this->get('api/customers');
         $response->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
+    public function canGetJSONFromApiCustomersByGET()
+    {
+        $response = $this->get('api/customers');
+        $this->assertThat($response->content(), $this->isJson());
+    }
+
+
+    /**
+     * @test
+     */
+    public function doJSONFormatFromApiCustomersByGETSatisfyRequirement()
+    {
+        $response = $this->get('api/customers');
+        $customers = $response->json();
+        $customer = $customers[0];
+        $this->assertSame(['id', 'name'], array_keys($customer));
+    }
+
+
+    /**
+     * @test
+     */
+    public function doJSONCountFromApiCustomersByGETAndTwoEquals()
+    {
+        $response = $this->get('api/customers');
+        $response->assertJsonCount(2);
     }
 
     /**
