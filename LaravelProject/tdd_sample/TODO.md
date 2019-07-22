@@ -6,7 +6,7 @@
 
 
 ・api/customersにPOSTメソッドでアクセスできる
-->canAccessApiCustomersByPOST()
+->canAccessApiCustomersByPOST() //finished!
 
 ・api/customers/{customer_id}にGETメソッドでアクセスできる
 ->canAccessApiCustomersCustomer_idByGET()
