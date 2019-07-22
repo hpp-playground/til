@@ -26,6 +26,9 @@
     *api_customersにnameは含まれるが値が存在しない(空文字列)データをPOSTした場合は422UnprocessableEntityが返却される
     ->return422ToPostDataHaveNameButWithoutValueFromApiCustomersByPOST() //finished!!
 
+    *POST_api_customersのエラーレスポンスの確認
+    ->checkErrorResponseFromApiCustomersByPOST()
+
 
 ・api/customers/{customer_id}にGETメソッドでアクセスできる
 ->canAccessApiCustomersCustomer_idByGET() //finished!

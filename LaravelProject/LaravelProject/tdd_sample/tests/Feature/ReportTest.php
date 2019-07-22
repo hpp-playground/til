@@ -108,6 +108,24 @@ class ReportTest extends TestCase
     }
 
     /**
+    * @test
+    */
+    public function checkErrorResponseFromApiCustomersByPOST()
+    {
+        $params = ['name' => ''];
+        $response = $this->postJson('api/customers', $params);
+        $error_response = [
+            'message' => "The given data was invalid.",
+            'errors' => [
+                'name' => [
+                    'name は必須項目です'  //errorを日本語で表示する
+                ],
+            ]
+        ];
+        $response->assertExactJson($error_response);
+    }
+
+    /**
      * @test
      */
     public function canAccessApiCustomersCustomer_idByGET()
