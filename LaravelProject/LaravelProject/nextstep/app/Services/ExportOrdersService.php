@@ -12,24 +12,11 @@ final class ExportOrdersService
 {
     private $connection;
 
-    /**
-     *
-     *
-     * @param Connection $connection
-     */
-     */
-     */
     public function __construct(Connection $connection)
     {
         $this->connection = $connection;
     }
 
-
-    /**
-     *
-     * @param Carbon $date
-     * @return Generator
-     */
     public function findOrders(Carbon $date): Generator
     {
         return $this->connection
@@ -57,4 +44,3 @@ final class ExportOrdersService
             ->cursor();
     }
 }
-

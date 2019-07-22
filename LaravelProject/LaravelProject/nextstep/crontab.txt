@@ -1,0 +1,1 @@
+0 5 * * * /usr/bin/php /home/vagrant/code/nextstep/artisan app:send-orders `date --date 'yesterday' +%Y%m%d`
