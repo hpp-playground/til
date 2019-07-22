@@ -1,8 +1,17 @@
 # TODO
-->testFunction() //test_code
+->testFunction() //test_code status
 
 ・api/customersにGETメソッドでアクセスできる
 ->canAccessApiCustomersByGET()  //finished!
+    *api/customersにGETメソッドでアクセスするとJSONが返却される
+    ->canGetJSONFromApiCustomersByGET() //finished!!
+
+    *api/customersにGETメソッドで取得できる顧客情報のJSON形式は要件通りである
+    ->doJSONFormatFromApiCustomersByGETSatisfyRequirement() //finished!!
+
+    *api/customersにGETメソッドで返却される顧客情報は2件である
+    ->doJSONCountFromApiCustomersByGETAndTwoEquals() //finished!!
+
 
 ・api/customersにPOSTメソッドでアクセスできる
 ->canAccessApiCustomersByPOST() //finished!
@@ -30,3 +39,5 @@
 
 ・api/reports/{report_id}にDELETEメソッドでアクセスできる
 ->canAccessApiReportsReport_idByDELETE() //finished
+
+
