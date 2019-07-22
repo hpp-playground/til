@@ -10,7 +10,7 @@ use GuzzleHttp\Client;
 
 use Illuminate\Support\Facades\Log;
 
-final class SendOrderUseCase
+final class SendOrdersUseCase
 {
     private $service;
 
@@ -37,16 +37,16 @@ final class SendOrderUseCase
                 }
                 $order = [
                     'order_code'                => $detail->order_code,
-                    'order_date',               => $detail->order_date,
-                    'total_quantity',           => $detail->total_quantity,
-                    'total_price',              => $detail->total_price,
-                    'customer_name',            => $detail->customer_name,
-                    'customer_email',           => $detail->customer_email,
-                    'destination_name',         => $detail->destination_name,
-                    'destination_zip',          => $detail->destination_zip,
-                    'destination_prefecture',   => $detail->destination_prefecture,
-                    'destination_address',      => $detail->destination_address,
-                    'destination_tel',          => $detail->destination_tel,
+                    'order_date'                => $detai->order_date,
+                    'total_quantity'            => $detail->total_quantity,
+                    'total_price'               => $detai->total_price,
+                    'customer_name'             => $detail->customer_name,
+                    'customer_email'            => $detail->customer_email,
+                    'destination_name'          => $detail->destination_name,
+                    'destination_zip'           => $detail->destination_zip,
+                    'destination_prefecture'    => $detail->destination_prefecture,
+                    'destination_address'       => $detail->destination_address,
+                    'destination_tel'           => $detail->destination_tel,
                     'order_details'             => [],
                 ];
             }
@@ -60,7 +60,7 @@ final class SendOrderUseCase
             ];
         }
         if (is_array($order)) {
-            $json->push($order)
+            $json->push($order);
         }
 
         $url = config('batch.import-orders-url');
