@@ -17,40 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('customers', function () {
-    return response()->json(\App\Customer::query()->select(['id', 'name'])->get());
-});
+Route::get('customers', 'ApiController@getCustomers');
+Route::post('customers', 'ApiController@postCustomers');
 
-Route::post('customers', function (\Illuminate\Http\Request $request) {
-    if (!$request->json('name')) {
-        return response()->json([], \Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
-    }
+Route::get('customers/{customer_id}', 'ApiController@getCustomer');
+Route::put('customers/{customer_id}', 'ApiController@putCustomer');
+Route::delete('customers/{customer_id}', 'ApiController@deleteCustomer');
 
-    $customer = new \App\Customer();
-    $customer->name = $request->json('name');
-    $customer->save();
-});
+Route::get('reports', 'ApiController@getReports');
+Route::post('reports', 'ApiController@postReports');
 
-Route::get('customers/{customer_id}', function () {
-});
-
-Route::post('customers/{customer_id}', function () {
-});
-
-Route::delete('customers/{customer_id}', function () {
-});
-
-Route::get('reports', function () {
-});
-
-Route::post('reports', function () {
-});
-
-Route::get('reports/{report_id}', function () {
-});
-
-Route::post('reports/{report_id}', function () {
-});
-
-Route::delete('reports/{report_id}', function () {
-});
+Route::get('reports/{report_id}', 'ApiController@getReport');
+Route::put('reports/{report_id}', 'ApiController@putReport');
+Route::delete('reports/{report_id}', 'ApiController@deleteReport');
