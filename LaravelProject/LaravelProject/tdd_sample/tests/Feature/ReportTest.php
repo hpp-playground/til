@@ -65,9 +65,26 @@ class ReportTest extends TestCase
      */
     public function canAccessApiCustomersByPOST()
     {
-        $response = $this->post('api/customers');
+        $customer = [
+            'name' => 'customer_name',
+        ];
+        $response = $this->postJson('api/customers', $customer);
         $response->assertStatus(200);
     }
+
+
+    /**
+     * @test
+     */
+    public function canAddCustomerNameToCustomersTableFromApiCustomersByPOST()
+    {
+        $params = [
+            'name' => '顧客名',
+        ];
+        $this->postJson('api/customers', $params);
+        $this->assertDatabaseHas('customers', $params);
+    }
+
 
     /**
      * @test

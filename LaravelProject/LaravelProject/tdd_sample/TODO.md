@@ -3,6 +3,7 @@
 
 ・api/customersにGETメソッドでアクセスできる
 ->canAccessApiCustomersByGET()  //finished!
+
     *api/customersにGETメソッドでアクセスするとJSONが返却される
     ->canGetJSONFromApiCustomersByGET() //finished!!
 
@@ -15,6 +16,12 @@
 
 ・api/customersにPOSTメソッドでアクセスできる
 ->canAccessApiCustomersByPOST() //finished!
+
+    *api_customersに顧客名をPOSTするとcustomersテーブルにそのデータが追加される
+    ->canAddCustomerNameToCustomersTableFromApiCustomersByPOST() //
+
+
+
 
 ・api/customers/{customer_id}にGETメソッドでアクセスできる
 ->canAccessApiCustomersCustomer_idByGET() //finished!
