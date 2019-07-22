@@ -1,0 +1,16 @@
+GET http://tdd_sample.test/api/customers
+
+###
+
+POST http://tdd_sample.test/api/customers
+content-type: application/json
+
+{
+    'name' : '顧客名',
+}
+
+###
+
+###
+
+###
