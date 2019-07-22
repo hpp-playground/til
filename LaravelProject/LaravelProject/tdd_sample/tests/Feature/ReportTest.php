@@ -88,9 +88,21 @@ class ReportTest extends TestCase
     /**
     * @test
     */
-    public function return422ByPostingDataWithoutNameFromApiCustomersByPOST()
+    public function return422ToPostDataWithoutNameFromApiCustomersByPOST()
     {
         $params = [];
+        $response = $this->postJson('api/customers', $params);
+        $response->assertStatus(\Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    /**
+    * @test
+    */
+    public function return422ToPostDataHaveNameButWithoutValueFromApiCustomersByPOST()
+    {
+        $params = [
+            'name' => '',
+        ];
         $response = $this->postJson('api/customers', $params);
         $response->assertStatus(\Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
     }
@@ -110,7 +122,7 @@ class ReportTest extends TestCase
      */
     public function canAccessApiCustomersCustomer_idByPUT()
     {
-        $response = $this->post('api/customers/1');
+        $response = $this->put('api/customers/1');
         $response->assertStatus(200);
     }
 
@@ -153,9 +165,9 @@ class ReportTest extends TestCase
     /**
      * @test
      */
-    public function canAccessApiReportsReport_idByPOST()
+    public function canAccessApiReportsReport_idByPUT()
     {
-        $response = $this->post('api/reports/1');
+        $response = $this->put('api/reports/1');
         $response->assertStatus(200);
     }
 
