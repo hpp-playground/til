@@ -1,0 +1,25 @@
+http://homestead.test/home
+
+###
+
+http://homestead.test/payload
+
+###
+
+http://homestead.test/auth/login
+
+###
+
+POST http://homestead.test/api/action/favorite
+
+###
+
+POST http://homestead.test/api/users/login
+Accept: application/json
+Content-Type: application/json
+
+<request>
+    <email>mail@example.com</email>
+    <password>password</password>
+</request>
+
