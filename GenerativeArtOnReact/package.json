@@ -1,14 +1,14 @@
 {
-  "name": "ReactGenerative",
+  "name": "GenerativeArtOnReact",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "http://hppRC.github.io/ReactGenerative",
+  "homepage": "http://hppRC.github.io/GenerativeArtOnReact",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build --git git"
   },
   "keywords": [],
   "author": "",
