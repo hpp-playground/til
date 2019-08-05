@@ -1,8 +1,8 @@
-import Theme1 from './themes/theme1'
+import noTheme from './themes/noTheme'
 import Theme2 from './themes/theme2'
 
 const themes = {
-    1 : Theme1,
+    1 : noTheme,
     2 : Theme2
 }
 

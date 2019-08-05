@@ -34,7 +34,7 @@ export default {
       filename: 'index.html'
     })
   ],
-  
+
   devServer: {
     historyApiFallback: true,
   }

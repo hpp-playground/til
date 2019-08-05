@@ -1,13 +1,16 @@
+import { log } from "util";
+
 const sketch1 = (p) => {
     let rotation = 0;
 
     p.setup = function () {
-      p.createCanvas(600, 400, p.WEBGL);
+      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
     };
 
     p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-      if (props.rotation){
-        rotation = props.rotation * Math.PI / 180;
+      console.log(props.param)
+      if (props.param.rotation){
+        rotation = props.param.rotation * Math.PI / 180;
       }
     };
 
