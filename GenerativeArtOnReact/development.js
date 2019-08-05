@@ -2,14 +2,14 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const src  = path.resolve(__dirname, 'src')
-const dist = path.resolve(__dirname, 'dist')
+const docs = path.resolve(__dirname, 'docs')
 
 export default {
   mode: 'development',
   entry: src + '/index.jsx',
 
   output: {
-    path: dist,
+    path: docs,
     filename: 'bundle.js'
   },
 
