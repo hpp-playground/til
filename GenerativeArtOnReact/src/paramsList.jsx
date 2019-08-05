@@ -1,3 +1,4 @@
+import React from 'react'
 import noParams from './params/noParams'
 import params1 from './params/params1'
 

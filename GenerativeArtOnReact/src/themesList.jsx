@@ -1,3 +1,4 @@
+import React from 'react'
 import noTheme from './themes/noTheme'
 import Theme2 from './themes/theme2'
 
