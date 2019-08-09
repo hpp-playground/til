@@ -28,7 +28,7 @@ fn compare_and_swap(x: &mut [u32], up: bool) {
 
 #[cfg(test)]
 mod tests {
-    use crate::first::sort;
+    use super::sort;
     #[test]
     fn sort_u32_ascending() {
         let mut x = vec![10, 30, 11, 20, 4, 330, 21, 110];
