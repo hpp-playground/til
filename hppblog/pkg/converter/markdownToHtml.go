@@ -8,14 +8,14 @@ import (
 	"gopkg.in/russross/blackfriday.v2"
 )
 
-func SaveMarkdownAsHTML(markdownPath string, savePath string, title string, css string) {
+func SaveMarkdownAsHTML(markdownPath string, savePath string) {
 	md, err := ioutil.ReadFile(markdownPath)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		return
 	}
 
-	html := convertMarkdownToHTML(md, title, css)
+	html := convertMarkdownToHTML(md)
 
 	file, err := os.Create(savePath)
 	if err != nil {
@@ -27,12 +27,12 @@ func SaveMarkdownAsHTML(markdownPath string, savePath string, title string, css 
 	file.Write(([]byte)(html))
 }
 
-func convertMarkdownToHTML(md []byte, title string, css string) []byte {
+func convertMarkdownToHTML(md []byte) []byte {
 	htmlFlags := blackfriday.CommonHTMLFlags
 	htmlFlags |= blackfriday.FootnoteReturnLinks
 	htmlFlags |= blackfriday.SmartypantsAngledQuotes
 	htmlFlags |= blackfriday.SmartypantsQuotesNBSP
-	renderer := blackfriday.NewHTMLRenderer(blackfriday.HTMLRendererParameters{Flags: htmlFlags, Title: title, CSS: css})
+	renderer := blackfriday.NewHTMLRenderer(blackfriday.HTMLRendererParameters{Flags: htmlFlags})
 
 	extFlags := blackfriday.CommonExtensions
 	extFlags |= blackfriday.Footnotes
