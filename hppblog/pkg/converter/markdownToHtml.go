@@ -24,7 +24,7 @@ func SaveMarkdownAsHTML(markdownPath string, savePath string) {
 	}
 	defer file.Close()
 
-	file.Write(([]byte)(html))
+	file.Write(html)
 }
 
 func convertMarkdownToHTML(md []byte) []byte {
