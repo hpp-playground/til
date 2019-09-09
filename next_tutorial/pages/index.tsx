@@ -1,12 +1,9 @@
-import Link from 'next/link'
+import Header from '../components/Header';
 
-const Index = () => (
-    <div>
-        <Link href="/about">
-            <a>About Page</a>
-        </Link>
-        <p>Hello Next.js and TypeScript</p>
-    </div>
-)
-
-export default Index
+export default () => (
+	<div>
+		<Header />
+		<h1>Index</h1>
+		<p>Hello Next.js in index</p>
+	</div>
+);

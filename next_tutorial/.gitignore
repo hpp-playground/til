@@ -49,3 +49,6 @@ typings/
 .fusebox/
 
 .dynamodb/
+
+.DS_Store
+.vscode

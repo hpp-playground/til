@@ -1,2 +1,2 @@
-# next.js tutorial
+# next.js tutorial with typescript
 
