@@ -1,10 +1,25 @@
 import Layout from '../components/MyLayouts';
+import Link from 'next/link';
+
+type Props = {
+	title: string;
+};
+
+const PostLink: React.SFC<Props> = props => (
+	<li>
+		<Link href={`/post?title=${props.title}`}>
+			<a>{props.title}</a>
+		</Link>
+	</li>
+);
 
 export default () => (
-	<div>
-		<Layout>
-			<h1>Index</h1>
-			<p>Hello Next.js in index</p>
-		</Layout>
-	</div>
+	<Layout>
+		<h1>My Blog</h1>
+		<ul>
+			<PostLink title='Hello Next.js' />
+			<PostLink title='Learn Next.js is awesome' />
+			<PostLink title='Deploy apps with Zeit' />
+		</ul>
+	</Layout>
 );
