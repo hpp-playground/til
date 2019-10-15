@@ -1,0 +1,27 @@
+{
+  "name": "generativedesign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wa": "babel src --compact==true --watch --out-dir output",
+    "ba": "babel src --compact==true --out-dir output",
+    "bn" : "for f in ./src/*; do if [[ -e ./output/${f:6} ]]; then :; else babel ${f} --compact==true -o ./output/${f:6}; fi; done"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://hppRC@github.com/hppRC/GenerativeDesign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hppRC/GenerativeDesign/issues"
+  },
+  "homepage": "https://github.com/hppRC/GenerativeDesign#readme"
+}
