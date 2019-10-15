@@ -1,0 +1,28 @@
+{
+	"name": "next_tutorial",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "hppRC <hpp.ricecake@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"@zeit/next-typescript": "^1.1.1",
+		"express": "^4.17.1",
+		"isomorphic-unfetch": "^3.0.0",
+		"next": "^9.0.5",
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0"
+	},
+	"scripts": {
+		"dev": "node server.js",
+		"build": "next build",
+		"start": "NODE_ENV=production node server.js"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.0",
+		"@types/next": "^8.0.6",
+		"@types/react": "^16.9.2",
+		"@types/react-dom": "^16.9.0",
+		"ts-loader": "^6.0.4",
+		"typescript": "^3.6.2"
+	}
+}

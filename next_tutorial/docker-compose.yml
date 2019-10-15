@@ -1,0 +1,22 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:stable
+        container_name: nginx
+        ports:
+            - '5000:80'
+        volumes:
+            - './conf.d:/etc/nginx/conf.d'
+        links:
+            - express
+
+    express:
+        image: node:latest
+        container_name: express
+        hostname: express
+        volumes:
+            - '.:/src'
+        working_dir: /src
+        command: [sh, -c, yarn install && yarn run build && yarn run start]
+        ports:
+            - '3000:3000'
