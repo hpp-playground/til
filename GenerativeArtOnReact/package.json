@@ -33,6 +33,6 @@
     "react-p5-wrapper": "^2.0.0",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2",
-    "styled-reset": "^3.0.0"
+    "styled-reset": "^4.0.0"
   }
 }
