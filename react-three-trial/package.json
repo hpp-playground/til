@@ -8,7 +8,7 @@
 		"emotion-reset": "^2.0.3",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
-		"react-scripts": "3.1.1",
+		"react-scripts": "3.3.1",
 		"react-three-fiber": "4.0.9",
 		"three": "^0.108.0"
 	},
